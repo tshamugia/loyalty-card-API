@@ -28,7 +28,7 @@ DEBUG = True
 
 
 ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = ['https://quack-trick-production.up.railway.app/']
+CSRF_TRUSTED_ORIGINS = ['*']
 
 CORS_ORIGIN_ALLOW_ALL = True
 
