@@ -28,7 +28,7 @@ DEBUG = True
 
 
 ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = ['*']
+CSRF_TRUSTED_ORIGINS = ['https://lcapi.up.railway.app/']
 
 CORS_ORIGIN_ALLOW_ALL = True
 
