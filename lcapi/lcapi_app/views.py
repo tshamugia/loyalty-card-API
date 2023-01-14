@@ -1,10 +1,10 @@
 """Module Export"""
 from rest_framework import generics
 from django.shortcuts import get_object_or_404
-from .models import Lcapi
 from .serializer import LcapiSerializer
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import TokenAuthentication
+from .models import Lcapi
 
 
 class LcapiRetrieveUpdateView(generics.RetrieveUpdateAPIView):
@@ -25,3 +25,5 @@ class LcapiAllUsersView(generics.ListAPIView):
     serializer_class = LcapiSerializer
     permission_classes = (IsAuthenticated,)
     authentication_classes = (TokenAuthentication,)
+    
+    
