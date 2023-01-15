@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework.authtoken',
     'djoser',
-    'phonenumber_field'
+   
 ]
 
 REST_FRAMEWORK = {
@@ -148,6 +148,3 @@ STATICFILES_STORAGE="whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# PHONENUMBER_DB_FORMAT = 'INTERNATIONAL'
-# PHONENUMBER_DEFAULT_REGION = 'GE'
-# PHONENUMBER_DEFAULT_FORMAT = 'RFC3966'
