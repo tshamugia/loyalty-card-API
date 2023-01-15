@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Lcapi, Organization
+from .models import Lcapi
 
         
 class LcapiSerializer(serializers.ModelSerializer):   
