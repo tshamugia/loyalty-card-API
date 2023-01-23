@@ -52,10 +52,14 @@ class GetUserView(generics.RetrieveAPIView):
         return UserField.objects.all()
 
 class ReportGetView(generics.ListAPIView):
+    permission_classes = (IsAuthenticated,)
+    authentication_classes = (TokenAuthentication,)
     serializer_class = ReportSerializer
     queryset = DbReport.objects.all()[:1]
     
    
 class ReportCreateView(generics.CreateAPIView):
+    permission_classes = (IsAuthenticated,)
+    authentication_classes = (TokenAuthentication,)
     serializer_class = ReportCreateSerializer
     queryset = DbReport.objects.all()

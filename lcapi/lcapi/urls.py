@@ -29,8 +29,8 @@ urlpatterns = [
     path('api/user/<str:pk>', GetUserView.as_view()),
     path('api/report-get/', ReportGetView.as_view()),
     path('api/report-create/', ReportCreateView.as_view()),
-    path('api/auth/', include('djoser.urls')),
-    re_path(r'^auth/', include('djoser.urls.authtoken')),
+    # path('api/auth/', include('djoser.urls')),
+    # re_path(r'^auth/', include('djoser.urls.authtoken')),
     path('docs/', include_docs_urls(title='lcapi')),
     path('schema', get_schema_view(
         title="lcapi",
