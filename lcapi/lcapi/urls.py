@@ -14,17 +14,27 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include, re_path
-from lcapi_app.views import LcapiRetrieveUpdateView, LcapiAllUsersView
-
-
-
-
+from django.urls import include, path, re_path
+from lcapi_app.views import (AccountAllUsersView, AccountRetrieveUpdateView,
+                             GetUserView, ReportCreateView, ReportGetView,
+                             UsersView)
+from rest_framework.documentation import include_docs_urls
+from rest_framework.schemas import get_schema_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/users/', LcapiAllUsersView.as_view()),
-    path('api/user/<int:pk>', LcapiRetrieveUpdateView.as_view()),
+    path('api/accounts/', AccountAllUsersView.as_view()),
+    path('api/account/<int:pk>', AccountRetrieveUpdateView.as_view()),
+    path('api/users/', UsersView.as_view()),
+    path('api/user/<str:pk>', GetUserView.as_view()),
+    path('api/report-get/', ReportGetView.as_view()),
+    path('api/report-create/', ReportCreateView.as_view()),
     path('api/auth/', include('djoser.urls')),
     re_path(r'^auth/', include('djoser.urls.authtoken')),
+    path('docs/', include_docs_urls(title='lcapi')),
+    path('schema', get_schema_view(
+        title="lcapi",
+        description="lcapi API Guide",
+        version="1.0.0"
+    ),name="openapi-schema"),
 ]
