@@ -1,5 +1,7 @@
 """Module Export"""
+import datetime
 
+from django.db.models import Sum
 from django.shortcuts import get_object_or_404
 from rest_framework import generics
 from rest_framework.authentication import TokenAuthentication
@@ -51,15 +53,21 @@ class GetUserView(generics.RetrieveAPIView):
     def get_queryset(self):
         return UserField.objects.all()
 
-class ReportGetView(generics.ListAPIView):
-    permission_classes = (IsAuthenticated,)
-    authentication_classes = (TokenAuthentication,)
-    serializer_class = ReportSerializer
-    queryset = DbReport.objects.all()[:1]
-    
-   
+
+
 class ReportCreateView(generics.CreateAPIView):
     permission_classes = (IsAuthenticated,)
     authentication_classes = (TokenAuthentication,)
     serializer_class = ReportCreateSerializer
     queryset = DbReport.objects.all()
+
+class ReportGetView(generics.ListAPIView):
+    permission_classes = (IsAuthenticated,)
+    authentication_classes = (TokenAuthentication,)
+    serializer_class = ReportSerializer
+    
+    
+    def get_queryset(self):
+        station = self.request.user
+        queryset = DbReport.objects.filter(station=station)        
+        return queryset

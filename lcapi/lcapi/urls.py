@@ -38,3 +38,7 @@ urlpatterns = [
         version="1.0.0"
     ),name="openapi-schema"),
 ]
+
+admin.site.index_title = "Lcapi"
+admin.site.site_title = "Lcapi_DB"
+admin.site.site_header = "Lcapi Administration"

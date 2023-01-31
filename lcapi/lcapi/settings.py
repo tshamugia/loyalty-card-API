@@ -48,6 +48,9 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework.authtoken',
     'djoser',
+    'rangefilter',
+    'django_filters',
+    'import_export',
    
 ]
 
