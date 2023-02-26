@@ -24,7 +24,7 @@ from rest_framework.schemas import get_schema_view
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/accounts/', AccountAllUsersView.as_view()),
-    path('api/account/<int:pk>', AccountRetrieveUpdateView.as_view()),
+    path('api/account/<str:pk>', AccountRetrieveUpdateView.as_view()),
     path('api/users/', UsersView.as_view()),
     path('api/user/<str:pk>', GetUserView.as_view()),
     path('api/report-get/', ReportGetView.as_view()),

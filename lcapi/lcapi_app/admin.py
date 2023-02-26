@@ -42,7 +42,7 @@ class ReportAdmin(ExportActionMixin, admin.ModelAdmin):
     #     return cube['daily_cube']
 
 fields = list(UserAdmin.fieldsets)
-fields[1] = ('Personal Info', {'fields': ('first_name', 'last_name', 'email', 'price', 'address' )})
+fields[1] = ('Personal Info', {'fields': ('first_name', 'last_name', 'email', 'price', 'address', 'pincode' )})
 UserAdmin.fieldsets = tuple(fields)
 
 admin.site.register(Account, AccountAdmin)

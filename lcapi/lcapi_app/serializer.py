@@ -15,7 +15,7 @@ class AccountSerializer(serializers.ModelSerializer):
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserField
-        fields = ('id', 'username', 'price', 'address')
+        fields = ('id', 'username', 'price', 'address', 'pincode',)
         
 
 class ReportSerializer(serializers.Serializer):
