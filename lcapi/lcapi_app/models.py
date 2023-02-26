@@ -23,7 +23,7 @@ class DbReport(models.Model):
 class UserField(AbstractUser):
     price = models.FloatField(null=True)
     address = models.CharField(max_length=100, blank=True, null=True)
-    pincode = models.CharField(max_length=3, blank=True, null=True)
+    pincode = models.CharField(max_length=100, blank=True, null=True)
 
 
 

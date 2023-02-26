@@ -102,8 +102,14 @@ WSGI_APPLICATION = 'lcapi.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        # 'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'mz0J2i3WZ3ooAeXP5lWd',
+        'HOST': 'containers-us-west-51.railway.app',
+        'PORT': '6606',
+
     }
 }
 
