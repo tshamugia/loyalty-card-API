@@ -48,6 +48,9 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework.authtoken',
     'djoser',
+    'rangefilter',
+    'django_filters',
+    'import_export',
    
 ]
 
@@ -99,8 +102,13 @@ WSGI_APPLICATION = 'lcapi.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'FkBzGNC5tn0Mu6X7xhop',
+        'HOST': 'containers-us-west-139.railway.app',
+        'PORT': '7834',
+
     }
 }
 
@@ -148,6 +156,5 @@ STATICFILES_STORAGE="whitenoise.storage.CompressedManifestStaticFilesStorage"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 
 AUTH_USER_MODEL = 'lcapi_app.UserField'
