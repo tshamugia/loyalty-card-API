@@ -24,9 +24,9 @@ from rest_framework.schemas import get_schema_view
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/accounts/', AccountAllUsersView.as_view()),
-    path('api/account/<str:pk>', AccountRetrieveUpdateView.as_view()),
+    path('api/account/<str:card_id>', AccountRetrieveUpdateView.as_view()),
     path('api/users/', UsersView.as_view()),
-    path('api/user/<str:pk>', GetUserView.as_view()),
+    path('api/user/<str:username>', GetUserView.as_view()),
     path('api/report-get/', ReportGetView.as_view()),
     path('api/report-create/', ReportCreateView.as_view()),
     path('api/auth/', include('djoser.urls')),
@@ -36,7 +36,7 @@ urlpatterns = [
         title="lcapi",
         description="lcapi API Guide",
         version="1.0.0"
-    ),name="openapi-schema"),
+    ), name="openapi-schema"),
 ]
 
 admin.site.index_title = "Lcapi"
